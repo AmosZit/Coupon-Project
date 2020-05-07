@@ -1,0 +1,18 @@
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.reka{background: url(https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.pixelstalk.net%2Fwp-content%2Fuploads%2F2016%2F06%2FImages-Light-Blue-Wallpaper-HD.jpg&f=1) no-repeat;
+     background-size: cover;
+
+    background-attachment: fixed;
+
+    position:inherit; 
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-family:  'Lato', sans-serif;
+    color: rgb(255, 255, 255);
+    font-weight: 400;  
+  }

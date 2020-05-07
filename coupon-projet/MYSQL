@@ -1,0 +1,326 @@
+
+--
+-- Base de données :  `project`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `company`
+--
+
+CREATE TABLE `company` (
+  `company_id` bigint(20) NOT NULL,
+  `company_name` varchar(30) NOT NULL DEFAULT '',
+  `company_phone` varchar(30) NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `company`
+--
+
+INSERT INTO `company` (`company_id`, `company_name`, `company_phone`) VALUES
+(2, 'Matrix1', '7894561234'),
+(3, 'Matrix2', '0709077002'),
+(4, 'Matrix3', '0709077099'),
+(5, 'Matrix4', '0000000098'),
+(6, 'Matrix5', '9638527410'),
+(7, 'Matrix6', '0709077006'),
+(8, 'Matrix7', '5245879542'),
+(9, 'Matrix8', '0709077008'),
+(12, 'compagnpieName', '0500029847');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `coupons`
+--
+
+CREATE TABLE `coupons` (
+  `coupon_id` bigint(20) NOT NULL,
+  `company_id` bigint(20) NOT NULL,
+  `category_id` bigint(20) NOT NULL,
+  `coupon_title` varchar(50) NOT NULL DEFAULT '',
+  `coupon_description` varchar(200) NOT NULL DEFAULT '',
+  `coupon_start_date` date NOT NULL DEFAULT '0000-00-00',
+  `coupon_end_date` date NOT NULL DEFAULT '0000-00-00',
+  `coupon_amount` int(6) NOT NULL DEFAULT '1',
+  `coupon_price` double NOT NULL DEFAULT '0',
+  `coupon_image` varchar(300) DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `coupons`
+--
+
+INSERT INTO `coupons` (`coupon_id`, `company_id`, `category_id`, `coupon_title`, `coupon_description`, `coupon_start_date`, `coupon_end_date`, `coupon_amount`, `coupon_price`, `coupon_image`) VALUES
+(2, 5, 2, 'DELL', 's,k,sslllsllslsslkjnj', '2004-11-11', '2019-11-11', 527, 165, 'https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.plainedefrance.fr%2Fwp-content%2Fuploads%2F2017%2F12%2Fordinateur-portable-et-pc-portable-4k.jpg&f=1'),
+(5, 5, 2, 'matrix5', 's,k,sslllsllslsslkjnj', '2004-11-11', '2019-11-11', 656465, 81, 'https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.audioholics.com%2Foutdoor-speaker-reviews%2Fwisdom-audio-sage-fl%2Fimage&f=1'),
+(6, 5, 4, 'matrix6', 's,k,sslllsllslsslkjnj', '2004-11-11', '2019-11-11', 47824, 1, 'https://static1.squarespace.com/static/55d20fa1e4b0aea2f00f7573/55d4e05fe4b097487a1a6c88/578d5f7929687f525efc6fc6/1468882819359/WesleySwivelClub_WhiteSand_BrushedStainless_Front.png?format=500w'),
+(7, 5, 2, 'matrix7', ' amous amos maos amsmps  zzms slsl smsms ssls lslss slslls slsls ', '2004-11-11', '2019-11-11', 5867, 15, 'https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fkatiparla.com%2Fwp-content%2Fuploads%2F2017%2F10%2FHisense-kATIPARLA.jpg&f=1'),
+(8, 5, 3, 'Clarks', 's,k,sslllsllslsslkjnj', '2004-11-11', '2019-11-11', 80746, 1, 'https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.offspring.co.uk%2Fblog%2Fwp-content%2Fuploads%2F2015%2F07%2FMadeinEngland_DesertBoot_2.jpg&f=1'),
+(10, 2, 3, 'teste2', ' ogfofk ogof hohg', '2019-05-08', '2071-09-08', 250, 55, 'https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fdolcefugo.net%2Fimages%2Flarge%2Farmani_drshirt_212_a.jpg&f=1'),
+(11, 2, 3, 'DAN', 'arete avec ta bouche ', '2019-06-07', '2020-02-07', 532, 82, 'https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ebayimg.com%2Fimages%2Fi%2F142148193436-0-1%2Fs-l1000.jpg&f=1'),
+(12, 2, 2, 'Beats', 'the best product of tour life lcdck', '2019-07-10', '2020-04-16', 61, 266, 'https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fcache.topiwall.com%2F32%2F3231fbb7be9cd2a288b2df0e1c29857a.jpg&f=1'),
+(13, 2, 3, 'amama', '55', '2014-01-09', '2020-11-12', 552, 5, 'https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Ffimgs.net%2Fimages%2Fsecundar%2Fo.49275.jpg&f=1'),
+(14, 2, 3, 'spdld', 'xc;  cc ', '2019-05-08', '2020-06-12', 55, 5, 'https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Ffimgs.net%2Fimages%2Fsecundar%2Fo.45064.jpg&f=1'),
+(15, 2, 1, 'best', 'lx; lc', '2019-09-06', '2020-01-10', 0, 545, 'https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwallpapersdsc.net%2Fwp-content%2Fuploads%2F2016%2F09%2FBurger-Photos.jpg&f=1'),
+(16, 2, 3, 'test', 'cx,, xc', '2019-06-14', '2020-02-20', 5, 5, 'https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.bike-magazin.de%2Fuploads%2Ftx_saltnews%2F44%2F44c75ffaaaabd245649b1054d12638f0924a925d.jpeg&f=1'),
+(17, 2, 3, 'tete', 'her test the code', '2019-02-14', '2020-01-10', 12, 5, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `customers`
+--
+
+CREATE TABLE `customers` (
+  `customer_id` bigint(20) NOT NULL,
+  `customer_first_name` varchar(30) NOT NULL DEFAULT '',
+  `customer_last_name` varchar(30) NOT NULL DEFAULT ''
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `customers`
+--
+
+INSERT INTO `customers` (`customer_id`, `customer_first_name`, `customer_last_name`) VALUES
+(2, 'dlldldldll', 'flflflfllast'),
+(23, 'klllkllll', 'lpllkklkkast'),
+(24, 'amous', 'zit'),
+(34, 'dan', 'zittoun'),
+(35, 'kkoko', 'okokokoko'),
+(36, 'amaamammam', 'amaammamamaa'),
+(37, 'qklmksdks', 'sqllsq'),
+(38, 'aaammmouss', 'amos'),
+(39, 'amoszz', 'amoszz'),
+(40, 'amoszz', 'amamam'),
+(41, 'aaaaaaaa', 'aaaaaaaaaaa'),
+(42, 'amamama', 'azefffff'),
+(43, 'aaaaaaaaaaaa', 'aaaaaaaaaaaa'),
+(54, 'test', 'teste'),
+(55, 'dany', 'dany'),
+(56, 'aamamam', 'clclcllc'),
+(57, 'allla', 'aall'),
+(58, 'ldcllflrfkrfrfrfr', 'rfrfrlfp^r^f^rlf^rlf^lf'),
+(59, 'ora', 'zit'),
+(61, 'julie', 'chemouny'),
+(62, 'amos', 'lydia'),
+(63, 'OLIVIER', 'OLIVIER'),
+(65, 'jacky', 'melloul'),
+(66, 'vincent', 'levy'),
+(67, 'nil', 'golan');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `purchases`
+--
+
+CREATE TABLE `purchases` (
+  `purchase_id` bigint(20) NOT NULL,
+  `customer_id` bigint(20) DEFAULT NULL,
+  `coupon_id` bigint(20) DEFAULT NULL,
+  `purchase_amount` int(6) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `purchases`
+--
+
+INSERT INTO `purchases` (`purchase_id`, `customer_id`, `coupon_id`, `purchase_amount`) VALUES
+(5, 37, 2, 221),
+(6, 37, 5, 3),
+(7, 37, 6, 222),
+(17, 38, 7, 100),
+(18, 38, 8, 4),
+(19, 34, 7, 54),
+(20, 34, 6, 110),
+(22, 34, 5, 140),
+(23, 40, 7, 700),
+(24, 24, 5, 5),
+(25, 59, 5, 10),
+(26, 59, 7, 14),
+(27, 59, 6, 5),
+(28, 24, 6, 480),
+(29, 24, 7, 400),
+(30, 24, 8, 42),
+(32, 34, 8, 55),
+(33, 24, 11, 8),
+(35, 39, 7, 55),
+(36, 24, 15, 5),
+(37, 61, 6, 5),
+(38, 61, 8, 2),
+(39, 62, 13, 2),
+(40, 63, 10, 5),
+(41, 54, 2, 5),
+(42, 24, 2, 24),
+(43, 24, 13, 1),
+(44, 65, 11, 2),
+(45, 66, 6, 2),
+(46, 66, 2, 2),
+(47, 67, 5, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `users`
+--
+
+CREATE TABLE `users` (
+  `user_id` bigint(20) NOT NULL,
+  `user_email` varchar(30) NOT NULL DEFAULT '',
+  `user_password` varchar(30) NOT NULL DEFAULT '',
+  `type` varchar(30) NOT NULL DEFAULT '',
+  `company_id` bigint(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `users` (`user_id`, `user_email`, `user_password`, `type`, `company_id`) VALUES
+(2, 'email@email.com', '1', 'Compagny', 2),
+(9, 'os@gmail.fr', 'psssdfbvword', 'Administator', NULL),
+(10, 'ocvsdff@gmail.fr', 'psssdfbvword', 'Administator', NULL),
+(11, 'osdlklkff@gmail.fr', 'psssdfbvword', 'Administator', NULL),
+(12, 'osdljkjkkjklkff@gmail.fr', 'psssdfbvword', 'Administator', NULL),
+(13, 'osdljkjklkff@gmail.fr', 'psssdfbvword', 'Administator', NULL),
+(14, 'ojklkff@gmail.fr', '1', 'Administator', 2),
+(16, 'emailelel@email.com', '77777777777777777777', 'Administator', NULL),
+(19, 'emalmlel@email.com', 'ALALALAMZMZMZZPPZZP', 'Administator', NULL),
+(23, 'emal@email.com', 'fllfflflflflf', 'Customer', NULL),
+(24, 'emalamos@emil.com', '1', 'Customer', NULL),
+(29, 'zitfff@gmail.com', '22222222222222222222', 'Compagny', NULL),
+(34, 'avi@gmail.com', '1', 'Customer', 2),
+(35, 'okq@ddkd.com', 'okkokookkoko', 'Customer', 2),
+(36, ';mxcxlvlvklvk', 'lklkkkllklk', 'Customer', 2),
+(37, 'ordana@mellou.com', '12345', 'Compagny', 2),
+(38, 'amos@gmail.sm', 'lalalllalalaa', 'Customer', NULL),
+(39, 'amm', '1', 'Customer', NULL),
+(40, 'a', '1', 'Customer', NULL),
+(41, 'dan@gmail.fr', '444444444444444444444', 'Customer', NULL),
+(42, 'dan@amos.amos', '4', 'Customer', NULL),
+(43, 'aa', 'a', 'Customer', NULL),
+(45, 'dandlls@gmail.fr', '358475847', 'Compagny', 8),
+(46, 'dankpk@gmail.fr', '2oe', 'Administator', NULL),
+(47, 'danpkk@gmail.fr', '1oe', 'Administator', NULL),
+(48, 'daniji@gmail.fr', '2oe', 'Administator', NULL),
+(49, 'danijijj@gmail.fr', '3oe', 'Administator', NULL),
+(51, 'daijin@gmail.fr', '3oe', 'Administator', NULL),
+(52, 'daijjin@geteil.fr', '444274274174', 'Compagny', 8),
+(53, 'daiiin@gel.fr', 'o88888888888888o', 'Administator', NULL),
+(54, 'teste', 'test', 'Customer', NULL),
+(55, '55', '55', 'Customer', NULL),
+(56, '88', 'pp', 'Customer', NULL),
+(57, 'laallallllll@lssl.com', 'llllllllllllllal', 'Customer', NULL),
+(58, 'dllfklf@kfl.ff', 'fflpfprrplfpf', 'Customer', NULL),
+(59, 'jsicj@gmail.fr', '12345678', 'Customer', NULL),
+(60, 'jdsizj@mellou.fr', '8882828828', 'Compagny', 2),
+(61, 'julie@ggg.fr', 'juliesmadja', 'Customer', NULL),
+(62, 'lydiah31@gmail.com', '12345678', 'Customer', NULL),
+(63, 'VIVO950@HOTMAIL.COM', 'LIORA2009', 'Customer', NULL),
+(64, 'jaimerai@teste.com', '5454slsl', 'Compagny', 8),
+(65, 'ijscdj@a.com', '12345678', 'Customer', NULL),
+(66, 'cesaro.vincent@gmail.com', 'israel26', 'Customer', NULL),
+(67, 'nil9711@gmail.com', 'nil9711@gmail.com', 'Customer', NULL);
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `company`
+--
+ALTER TABLE `company`
+  ADD PRIMARY KEY (`company_id`),
+  ADD UNIQUE KEY `company_name` (`company_name`),
+  ADD UNIQUE KEY `company_phone` (`company_phone`);
+
+--
+-- Index pour la table `coupons`
+--
+ALTER TABLE `coupons`
+  ADD PRIMARY KEY (`coupon_id`),
+  ADD KEY `company_id` (`company_id`);
+
+--
+-- Index pour la table `customers`
+--
+ALTER TABLE `customers`
+  ADD PRIMARY KEY (`customer_id`);
+
+--
+-- Index pour la table `purchases`
+--
+ALTER TABLE `purchases`
+  ADD PRIMARY KEY (`purchase_id`),
+  ADD KEY `customer_id` (`customer_id`),
+  ADD KEY `coupon_id` (`coupon_id`);
+
+--
+-- Index pour la table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`user_id`),
+  ADD UNIQUE KEY `user_email` (`user_email`),
+  ADD KEY `company_id` (`company_id`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `company`
+--
+ALTER TABLE `company`
+  MODIFY `company_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT pour la table `coupons`
+--
+ALTER TABLE `coupons`
+  MODIFY `coupon_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+
+--
+-- AUTO_INCREMENT pour la table `purchases`
+--
+ALTER TABLE `purchases`
+  MODIFY `purchase_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+
+--
+-- AUTO_INCREMENT pour la table `users`
+--
+ALTER TABLE `users`
+  MODIFY `user_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `coupons`
+--
+ALTER TABLE `coupons`
+  ADD CONSTRAINT `coupons_ibfk_1` FOREIGN KEY (`company_id`) REFERENCES `company` (`company_id`) ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `customers`
+--
+ALTER TABLE `customers`
+  ADD CONSTRAINT `customers_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `users` (`user_id`) ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `purchases`
+--
+ALTER TABLE `purchases`
+  ADD CONSTRAINT `purchases_ibfk_1` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`customer_id`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `purchases_ibfk_2` FOREIGN KEY (`coupon_id`) REFERENCES `coupons` (`coupon_id`) ON UPDATE CASCADE;
+
+--
+-- Contraintes pour la table `users`
+--
+ALTER TABLE `users`
+  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`company_id`) REFERENCES `company` (`company_id`) ON UPDATE CASCADE;
+COMMIT;
+

@@ -1,0 +1,81 @@
+
+
+<body class="bodytest">
+
+  <h1 class='insetshadow'>About Me</h1>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <div class="content">
+  <div class="content__container">
+  
+        <div id="menu">
+                    <ul>
+                         <li><a href="login">Exit</a></li>
+                         <li><a href="customer">Home</a></li>
+                         
+                    </ul>
+               </div>
+               <br>
+               <body>
+  
+     
+  
+          <h2 style="padding-left:50px;">Purchase :</h2>
+          
+          <table style="padding-left:40px;" >
+            <tr>
+              <th>Title</th>
+              <th>Amounts</th>
+              <th>End Date</th>
+              <th>Description </th>
+              <th>Image</th>
+            </tr>
+            <tr  *ngFor = "let purchase of myCustomerService.allPurchase "> 
+              <td>{{purchase.coupon.title}}</td>
+              <td>{{purchase.amounts}} </td>
+              <td>{{purchase.coupon.endDate}}</td>
+              <td>{{purchase.coupon.description}}</td>
+              <td><img src={{purchase.coupon.image}} alt="" style="width:80px;height:50px;"></td>       
+                    <br>
+                    <br>
+            </tr>
+              
+          </table>
+        <br>
+  
+                <h2 style="padding-left:50px;">Your's identifiant :</h2>
+                              
+                <table style="padding-left:40px;">
+                  <tr>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Email</th>
+                      <th>Password</th>
+                    </tr>
+                      <td>{{myCustomerService.oneCustomer.firstName}}</td>
+                      <td>{{myCustomerService.oneCustomer.lastName}}</td>
+                      <td>{{myCustomerService.infoCustomer.user.email}}</td>
+                      <td>{{myCustomerService.infoCustomer.user.password}}</td>
+                      <br>
+          </table>
+          <br>
+          <br>
+  
+       
+          <h2 style="padding-left:50px;">update Customer</h2>                      
+          <table style="padding-left:40px;">
+              <tr>
+                  <th>First Name</th>
+                  <th>Last Name</th>
+                </tr>
+                  <td> <input type="firstName" placeholder="First Name..."name="firstName" [(ngModel)]="customer.firstName" autocomplete="off"></td>
+                    <td> <input type="lastName" placeholder="Last Name... "name="lastName" [(ngModel)]="customer.lastName"autocomplete="off"></td>
+        </table>
+        <form method="post" class="boxUpdate" style="padding-left:50px;">
+            <input type="update" name="" value="change" (click)="updateThisCustomer(customer)" />
+            <form method="post" class="boxDelete" style="padding-left:auto;">
+                    <input type="delete" name="" value="delete account"  (click)="deleteThisCustomer()" />
+                  </form>
+                 
+      </form>
+          <br>
+          <br>

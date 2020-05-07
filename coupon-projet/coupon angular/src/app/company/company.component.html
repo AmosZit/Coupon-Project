@@ -1,0 +1,104 @@
+
+ <body class="bodytest">
+           
+  <h1 class='insetshadow'>{{myCompanyService.companyInfo.companyName}}  </h1>
+<div class="content">
+<div class="content__container">
+
+         <div id="menu">
+                     <ul>
+                          <li><a href="login">Exit</a></li>
+                          <li><a href="add-coupon">Creat Coupon</a></li>
+                          <li><a href="info-company">About</a></li>
+
+
+                     </ul>
+                </div>
+
+                <div class="column-6 form-select">
+                    <select name="" id="" value='All' (change)="onChangeOptionCoupon($event.target.value)">
+                      <option>All</option>
+                      <option>FOOD</option>
+                      <option>ELECTRICITY</option>
+                      <option>DRESS</option>
+                      <option>FURNITURE</option>
+                    </select>
+                  </div>
+            
+                <br>
+                <br>
+
+                <div class="wrapper"  *ngFor = "let coupon of myCompanyService.allCouponByCompany "> 
+                        <div class="card">
+                              
+                          <div class="product-left">
+                            <div class="header">
+                              <h1>{{coupon.title}}</h1>
+
+                              <p>Type of coupon : </p>
+                              <select name="" id="" [value]='coupon.category' (change)="onChangeOption($event.target.value)" [(ngModel)]="coupon.category">
+                                  <option>FOOD</option>
+                                  <option>ELECTRICITY</option>
+                                  <option>DRESS</option>
+                                  <option>FURNITURE</option>
+                                </select>
+                                <div class="focus">
+                                </div>
+  
+                                                                       
+                            </div>
+                            <!--DESCRIPITON / DETAILS-->
+                            <div class="product-main">
+                                  <p>Description : </p>
+                              <textarea placeholder="This is an awesome comment box" rows="20" name="comment[text]" id="comment_text" cols="40" class="ui-autocomplete-input" 
+                              autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" [(ngModel)]="coupon.description"></textarea>
+                            </div>
+                              <div class="focus">
+                              </div>
+
+                            <!--CHOOSE PRODUCT DETAILS-->
+                            <div class="product-details">
+                            
+                              <!--PRODUCT TOTAL-->
+                              <div class="product-total">
+                                <p>Price ($) : </p>
+                                <input class="c-input-group__input c-input-group__input"  [(ngModel)]="coupon.price" type="number" />
+
+                              </div>
+                            </div>
+                                  
+
+                        <p>Quantity : </p>
+                        <input class="c-input-group__input c-input-group__input"  [(ngModel)]="coupon.amount" type="number" />
+<br>
+                        <div class="coupon-detail coupon-button-type">
+                                    <p>start Date</p>
+                                    <input class="c-input-group__input c-input-group__input"  [(ngModel)]="coupon.startDate" type="date" />
+                                    <p>end Date</p>
+                                    <input class="c-input-group__input c-input-group__input"  [(ngModel)]="coupon.endDate" type="date" />
+                                    <p>Image URL</p>
+                                    <input class="c-input-group__input_text c-input-group__input--text"  [(ngModel)]="coupon.image" type="url" />
+                                  </div>
+
+                            <br>
+                            <!-- ADD TO CART BUTTON -->
+                            <div class="product-btns">
+                                    <a  class="product-add" (click)="deleteThisCoupon(coupon.id)" >Delete Coupon</a>
+                                  </div>
+                                  <br>
+                                  <div class="product-btns">
+                                      <a  class="product-add" (click)="updateCoupon(coupon)" >update Coupon</a>
+                                    </div>
+                            
+                          </div>
+                          <div class="product-right">
+                            <img src={{coupon.image}} alt="">
+                            
+                          </div>
+                        
+
+                        
+                        </div>
+                      
+                      </div>
+                     

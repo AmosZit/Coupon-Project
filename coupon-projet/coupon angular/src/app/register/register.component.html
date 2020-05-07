@@ -1,0 +1,13 @@
+
+     <body>
+        <h1 class='insetshadow'>Create account</h1>
+        <form method="post" class="box">
+          <input type="firstName" placeholder="First Name  "name="firstName" [(ngModel)]="customer.firstName" autocomplete="off">
+          <input type="lastName" placeholder="Last Name  "name="lastName" [(ngModel)]="customer.lastName"autocomplete="off">
+          <input type="email" placeholder="Email  "name="email" [(ngModel)]="customer.user.email"autocomplete="off">
+          <input type="password" placeholder="Password "name="password" [(ngModel)]="customer.user.password">
+          <input type="submit" name="" value="create" (click)="register(customer)" />
+          <input type="button" class="button_active" onclick="location.href='login';" value="back"/>
+        </form>
+        </body>
+      

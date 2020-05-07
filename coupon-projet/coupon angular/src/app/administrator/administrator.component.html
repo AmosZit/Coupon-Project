@@ -1,0 +1,151 @@
+<body class="bodytest">
+
+  <h1 class='insetshadow'>Administrator</h1>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <div class="content">
+    <div class="content__container">
+
+      <div id="menu">
+        <ul>
+          <li><a href="login">Exit</a></li>
+        </ul>
+      </div>
+      <br>
+
+      <body>
+
+        <h2 style="padding-left:50px;">Your's identifiant :</h2>
+
+        <table style="padding-left:40px;">
+          <tr>
+            <th>Email</th>
+            <th>Password</th>
+          </tr>
+          <td>{{myAdminService.oneUser.email}}</td>
+          <td>{{myAdminService.oneUser.password}}</td>
+          <br>
+        </table>
+        <br>
+        <br>
+                <!--CREAT COMPANY-->
+
+        <h2 style="padding-left:50px;">Creat Company</h2>
+        <table style="padding-left:40px;">
+          <tr>
+            <th>Company</th>
+            <th>Phone</th>
+          </tr>
+          <td> <input type="firstName" placeholder="company Name..." name="firstName"
+              [(ngModel)]="company.companyName" autocomplete="off"></td>
+          <td> <input type="phone" placeholder="contactePhone"  maxlength="10" pattern="\d{10}"  [(ngModel)]="company.contactePhone"
+              autocomplete="off"></td>
+        </table>
+        <form method="post" class="boxCreat" style="padding-left:50px;">
+          <input type="creat" class="button_active" value="create" (click)="registerCompany(company)" />
+        </form>
+
+
+        <br>
+        <br>
+
+                        <!--UPDATE COMPANY-->
+
+        <table style="padding-left:40px;">
+          <h2 style="padding-left:50px;">update Company</h2>
+          <p style="padding-left:50px;">Enter the name of the company </p>
+          <tr>
+            <th>company</th>
+            <th>Phone</th>
+          </tr>
+          <td> <input type="firstName" placeholder="company Name..." name="firstName"
+              [(ngModel)]="company.companyName" autocomplete="off"></td>
+          <td> <input type="tel" id="phone" name="phone" placeholder="0123456789" pattern="[0-9]{3}[0-9]{3}[0-9]{2}[0-9]{2}" required [(ngModel)]="company.contactePhone"
+              autocomplete="off"></td>
+        </table>
+        <form method="post" class="boxCreat" style="padding-left:50px;">
+          <input type="creat" class="button_active" value="update" (click)="updateCompany(company)" />
+        </form>
+
+
+        <br>
+        <br>
+
+
+                <!--CREAT USER -->
+
+        <table style="padding-left:40px;">
+          <h2 style="padding-left:50px;">update Users</h2>
+          <p style="padding-left:50px;">Enter the mail of the users </p>
+          <tr>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Type</th>
+          </tr>
+          <td> <input type="firstName" placeholder="email..." name="firstName" [(ngModel)]="user.email"
+              autocomplete="off"></td>
+          <td> <input type="lastName" placeholder="password" name="lastName" [(ngModel)]="user.password"
+              autocomplete="off"></td>
+          <td>
+                            <!--CHOSE TYPE-->
+
+            <div class="column-6 form-select">
+              <select name="" id="" value='All' (change)="onChangeOption($event.target.value)">
+                <option></option>
+                <option>Administator</option>
+                <option>Compagny</option>
+                <option>Customer</option>
+              </select>
+            </div>
+          </td>
+        </table>
+        <form method="post" class="boxCreat" style="padding-left:50px;">
+          <input type="creat" class="button_active" value="update" (click)="updateUsers(user)" />
+        </form>
+
+
+
+        <br>
+        <br>
+                <!--TABLE OF COMPANY-->
+
+        <div class="tableaux">
+          <h2 style="padding-left:50px;">List of Company</h2>
+          <table style="padding-left:40px;">
+            <tr>
+              <th>Company</th>
+              <th>Phone</th>
+              <th>Options</th>
+            </tr>
+            <tr *ngFor="let company of myAdminService.allCompany ">
+              <td>{{company.companyName}}</td>
+              <td>{{company.contactePhone}}</td>
+              <td>
+                <form method="post" class="boxCreat">
+                  <input type="creat" class="button_active" (click)="allUserCompany(company)" value="show compte" />
+                </form>
+                <form method="post" class="boxDelete">
+                  <input type="delete" class="button_active" (click)="deleteThisCompany(company.id)" value="delete" />
+                </form>
+              </td>
+              <br>
+              <br>
+            </tr>
+          </table>
+        </div>
+                <!--TABLE OF USERS OF  COMPANY -->
+
+        <div class="tableaux">
+          <h2 style="padding-left:40px;">User's of Company {{company2.companyName}}</h2>
+          <table class="tableaux" style="padding-left:50px;">
+            <tr>
+              <th>Email</th>
+              <th>Password</th>
+            </tr>
+            <tr *ngFor="let companyUser of myAdminService.allUsersCompany ">
+              <td>{{companyUser.email}}</td>
+              <td>{{companyUser.password}}</td>
+            </tr>
+          </table>
+        </div>
+        <br>
+        <br>

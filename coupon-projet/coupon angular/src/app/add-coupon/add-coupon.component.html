@@ -1,0 +1,94 @@
+<body class="bodytest">
+
+  <h1 class='insetshadow'>Creat Coupon </h1>
+  <div class="content">
+    <div class="content__container">
+
+      <div id="menu">
+        <ul>
+          <li><a href="login">Exit</a></li>
+          <li><a href="company">Back</a></li>
+
+        </ul>
+      </div>
+      <br>
+      <br>
+
+
+      <body class="bodytest">
+        <div class="wrapper">
+          <div class="card">
+
+            <div class="product-left">
+              <div class="header">
+                <h1>title <input class="c-input-group__input_text c-input-group__input--text" [(ngModel)]="coupon.title"
+                    type="text" /></h1>
+
+                <!--choice your type of coupon-->
+
+                  <p>Type of coupon : </p>
+                  <select name="" id="" [value]='coupon.category' (change)="onChangeOption($event.target.value)"
+                    [(ngModel)]="coupon.category">
+                    <option>FOOD</option>
+                    <option>ELECTRICITY</option>
+                    <option>DRESS</option>
+                    <option>FURNITURE</option>
+                  </select>
+
+                  <div class="product-main">
+                    <div class="focus">
+                    </div>
+  
+
+                                  <!--CHOOSE PRODUCT DETAILS-->
+
+                </div>
+                <br>
+                    <p>Description : </p>
+                  <textarea placeholder="This is an awesome comment box" rows="20" name="comment[text]"
+                    id="comment_text" cols="40" class="ui-autocomplete-input" autocomplete="off" role="textbox"
+                    aria-autocomplete="list" aria-haspopup="true" [(ngModel)]="coupon.description"></textarea>
+                    <div class="product-main">
+                      <div class="focus">
+                      </div>
+    
+  
+                </div>
+                <div class="product-details">
+                  <div class="product-total">
+                    <p>$ price</p>
+                    <input class="c-input-group__input c-input-group__input--numeric" [(ngModel)]="coupon.price"
+                      type="text" pattern="[0-9]+" value="" id="numeric-input" />
+
+                  </div>
+                </div>
+                <div class="product-total">
+                  <p>Amount</p>
+                  <input class="c-input-group__input c-input-group__input--numeric" [(ngModel)]="coupon.amount"
+                    type="text" pattern="[0-9]+" value="" id="numeric-input" />
+
+
+                  <fieldset class="c-input-group">
+                    <div class="coupon-detail coupon-button-type">
+                      <p>start Date</p>
+                      <input class="c-input-group__input c-input-group__input" [(ngModel)]="coupon.startDate"
+                        type="date" />
+                      <p>End Date</p>
+                      <input class="c-input-group__input c-input-group__input" [(ngModel)]="coupon.endDate"
+                        type="date" />
+                      <p>Image URL</p>
+                      <input class="c-input-group__input_text c-input-group__input--text" [(ngModel)]="coupon.image"
+                        type="url" />
+
+
+                    </div>
+                  </fieldset>
+                  <br>
+                  <!-- creat croupon  -->
+                  <div class="product-btns">
+                    <a class="product-add" (click)="creatCoupon(coupon)">Creat Coupon</a>
+                </div>
+                </div>
+              </div>
+            </div>
+            <br>

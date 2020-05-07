@@ -1,0 +1,90 @@
+h1 {
+    font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", serif;
+    font-size: 92px;
+    padding: 80px 50px;
+    text-align: center;
+    text-transform: uppercase;
+    text-rendering: optimizeLegibility;
+  }
+  h1.insetshadow {
+    color: #2c2c2c;
+    background-color: transparent;
+    letter-spacing: 0.1em;
+    text-shadow: -1px -1px 1px #111, 2px 2px 1px slategray;
+  }
+
+  .box
+  {
+    width:300px;
+    padding:40px;
+    position:absolute;
+    top:70%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    background-color:transparent;
+    text-align:center;
+  }
+  .box h1{
+    color:transparent;
+    text-transform:uppercase;
+    font-weight:500;
+  }
+  .box input[type="firstName"],.box input[type="lastName"],.box input[type="email"],.box input[type="password"]
+  {
+    border:0;
+    background:none;
+    display:block;
+    margin:20px auto;
+    text-align:center;
+    border:2px solid #1a6ab2;
+    padding:14px 10px;
+    width:200px;
+    outline:none;
+    color:black;
+    border-radius:20px;
+    transition:0.25s;
+  }
+  
+  .box input[type="firstName"]:focus,.box input[type="lastName"]:focus,.box input[type="email"]:focus,.box input[type="password"]:focus
+  {
+    width:280px;
+    border-color:#1a6ab2;
+  }
+  
+  .box input[type="submit"]
+  {
+    border:0;
+    background:none;
+    display:block;
+    margin:20px auto;
+    text-align:center;
+    border:2px solid transparent;
+    padding:14px 10px;
+    outline:none;
+    color:black;
+    border-radius:20px;
+    transition:0.25s;
+    cursor:pointer;
+  }
+  .box input[type="submit"]:hover{
+    background:greenyellow;
+  }
+  
+.box input[type="button"]
+{
+  border:0;
+  background:none;
+  display:block;
+  margin:20px auto;
+  text-align:center;
+  padding:14px 10px;
+  outline:none;
+  color:black;
+  border-radius:20px;
+  transition:0.25s;
+  cursor:pointer;
+}
+
+.box input[type="button"]:hover{
+  background: whitesmoke;
+}

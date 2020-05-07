@@ -1,0 +1,31 @@
+
+      
+<body>
+      <h1 class='insetshadow'>Coupon Project</h1>
+      <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<div class="content">
+  <div class="content__container">
+    <p class="content__container__text">
+      Hello
+    </p>
+    
+    <ul class="content__container__list">
+      <li class="content__container__list__item">Administrator </li>
+      <li class="content__container__list__item">Company </li>
+      <li class="content__container__list__item">Customer </li>
+      <li class="content__container__list__item">.. </li>
+    </ul>
+  </div>
+</div>
+   <form method="post" class="box">
+     <h2>Login</h2>
+     <input type="email" placeholder="Email  "name="email" [(ngModel)]="myLoginService.user.email"autocomplete="off">
+     <input type="password" placeholder="Password "name="password" [(ngModel)]="myLoginService.user.password">
+     <input type="submit" name="" (click)="login()" value="Login" />
+     
+     <input type="button" class="button_active" onclick="location.href='register';" value="register"/>
+    </form>
+   </body>
+
+
+   

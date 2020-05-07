@@ -1,0 +1,77 @@
+<body class="bodytest">
+
+  <h1 class='insetshadow'>welcome {{myCustomerService.oneCustomer.firstName}}</h1>
+  <div class="content">
+    <div class="content__container">
+
+      <div id="menu">
+        <ul>
+          <li><a href="InfoPage">About Me</a></li>
+          <li><a href="login">Exit</a></li>
+
+
+        </ul>
+      </div>
+      <br>
+      <div class="column-6 form-select">
+        <select name="" id="" value='All' (change)="onChangeOption($event.target.value)">
+          <option>All</option>
+          <option>FOOD</option>
+          <option>ELECTRICITY</option>
+          <option>DRESS</option>
+          <option>FURNITURE</option>
+        </select>
+      </div>
+
+
+
+      <div class="wrapper" *ngFor="let coupon of myCouponService.allCoupon">
+
+        <div class="card">
+
+          <div class="product-left">
+            <div class="header">
+              <h1>{{coupon.title}}</h1>
+              <p>{{coupon.category}}</p>
+              <h2>Rest : {{coupon.amount}}</h2>
+            </div>
+            <!--DESCRIPITON / DETAILS-->
+            <div class="product-main">
+              <div class="focus">
+                <span>Description</span>
+              </div>
+              <p>{{coupon.description}}</p>
+            </div>
+            <!--CHOOSE PRODUCT DETAILS-->
+            <div class="product-details">
+
+              <!--PRODUCT TOTAL-->
+              <div class="product-total">
+                <h3>Total Price</h3>
+                <p>${{coupon.price}}</p>
+              </div>
+            </div>
+
+            <fieldset class="c-input-group">
+              <legend class="c-input-group__legend">Quantity</legend>
+              <input class="c-input-group__input c-input-group__input--numeric" [(ngModel)]="amounts" type="text"
+                pattern="[0-9]+" value="1" id="numeric-input" />
+              <div class="coupon-detail coupon-button-type">
+                <div class="exp-text">Expires {{coupon.endDate}} <a title="Save This Coupon" href="#"
+                    class="coupon-save"><i class="glyphicon glyphicon-star"></i></a></div>
+              </div>
+            </fieldset>
+            <br>
+            <!-- ADD TO CART BUTTON -->
+            <div class="product-btns">
+              <a class="product-add" (click)="byCoupon(coupon)">Add To Cart</a>
+            </div>
+          </div>
+          <div class="product-right">
+            <img src={{coupon.image}} alt="">
+
+          </div>
+
+        </div>
+
+      </div>

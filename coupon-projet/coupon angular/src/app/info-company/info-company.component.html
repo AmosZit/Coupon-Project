@@ -1,0 +1,66 @@
+       
+<body class="bodytest">
+       
+  <h1 class='insetshadow'>About</h1>
+   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+<div class="content">
+<div class="content__container">
+
+         <div id="menu">
+                     <ul>
+                          <li><a href="login">Exit</a></li>
+                          <li><a href="company">Back</a></li>
+                     </ul>
+                </div>
+                <br>
+                <body>
+
+
+                   <h2 style="padding-left:60px;">Your's identifiant :</h2>
+                               
+                   <table style="padding-left:30px;"> 
+                       <tr>
+                         <th>Email</th>
+                         <th>Password</th>
+                       </tr>
+                         <td>{{myAdminService.oneUser.email}}</td>
+                         <td>{{myAdminService.oneUser.password}}</td>
+                         <br>
+             </table>
+             <br>
+             <br>
+           <br>
+         <h2 style="padding-left:60px;">User's Company</h2>
+         <table style="padding-left:30px;"> 
+             <tr>
+                   <th>Email</th>
+                   <th>Password</th>
+                 </tr>
+                 <tr *ngFor = "let companyUser of myCompanyService.usersCompany ">
+                   <td>{{companyUser.email}}</td>
+                   <td>{{companyUser.password}}</td>
+                 </tr>
+               </table>
+               <br>
+               <br>
+
+                <h2 style="padding-left:60px;">Creat User</h2>
+                <table style="padding-left:30px;"> 
+                   <tr>
+                    <th>Email</th>
+                    <th>Password</th>
+                   </tr>
+                    <td><input type="Name" placeholder="Email..."name="compagnieName" [(ngModel)]="user.email" autocomplete="off">
+
+                    </td>
+                    <td><input type="texte" placeholder="Password... "name="contactePass" [(ngModel)]="user.password"autocomplete="off">
+                    </td>
+               </table>
+               
+               <form method="post" class="boxDelete" style="padding-left:60px;">
+                   <input type="delete" name="" value="Creat"  (click)="creatUser(user)" />
+                 </form>
+
+
+ <br>
+ <br>
